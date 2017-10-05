@@ -8,15 +8,23 @@
 [![semantic-release][semantic-image] ][semantic-url]
 [![js-standard-style][standard-image]][standard-url]
 
+Useful to confirm that tools that generate files were successful.
+
 ## Install
 
 Requires [Node](https://nodejs.org/en/) version 6 or above.
 
 ```sh
-npm install --save ok-file
+npm install --save-dev ok-file
 ```
 
 ## Use
+
+Check if given file `foo.txt` exists and is not empty
+
+```
+$(npm bin)/ok-file foo.txt
+```
 
 ### Small print
 
