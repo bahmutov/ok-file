@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "bugs": "https://github.com/bahmutov/ok-file/issues",
+  "bin": {
+    "ok-file": "bin/ok-file"
+  },
   "config": {
     "pre-git": {
       "commit-msg": "simple",
