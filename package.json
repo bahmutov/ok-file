@@ -4,7 +4,7 @@
   "version": "0.0.0-development",
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "bugs": "https://github.com/bahmutov/ok-file/issues",
-  "bin": {
+  "alias": {
     "ok-file": "bin/ok-file"
   },
   "config": {
