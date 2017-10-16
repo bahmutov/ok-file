@@ -35,13 +35,23 @@ $(npm bin)/ok-file foo.txt bar.js
 You can even pass a wild card string to find files
 
 ```
-$(npm bin)/ok-file 'videso/*.mp4'
+$(npm bin)/ok-file 'videos/*.mp4'
 ```
 
 You can combine filenames with wild cards
 
 ```
 $(npm bin)/ok-file package.json 'src/*.js'
+```
+
+### API
+
+You can check a single filename or wild card using the API
+
+```js
+const okFile = require('ok-file')
+okFile('file/name') // or okFile('src/*.js')
+// returns true or false
 ```
 
 ## Debugging
