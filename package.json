@@ -84,5 +84,9 @@
     "prettier-standard": "7.0.1",
     "semantic-release": "^8.0.3",
     "standard": "10.0.3"
+  },
+  "dependencies": {
+    "debug": "3.1.0",
+    "globby": "6.1.0"
   }
 }

@@ -26,6 +26,10 @@ Check if given file `foo.txt` exists and is not empty
 $(npm bin)/ok-file foo.txt
 ```
 
+## Debugging
+
+Run program with `DEBUG=ok-file ...` environment variable
+
 ### Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2017
