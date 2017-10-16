@@ -8,6 +8,12 @@ node_js:
   - '8'
 before_script:
   - npm prune
+script:
+  - npm test
+  - DEBUG=ok-file node bin/ok-file.js package.json
+  - DEBUG=ok-file node bin/ok-file.js package.json .travis.yml
+  - DEBUG=ok-file node bin/ok-file.js src/*.js
+  - DEBUG=ok-file node bin/ok-file.js does/not/exist || true
 after_success:
   - npm run semantic-release
 branches:
