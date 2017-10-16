@@ -14,6 +14,7 @@ script:
   - DEBUG=ok-file node bin/ok-file.js package.json .travis.yml
   - DEBUG=ok-file node bin/ok-file.js src/*.js
   - DEBUG=ok-file node bin/ok-file.js does/not/exist || true
+  - DEBUG=ok-file node bin/ok-file.js package.json 'src/*.js'
 after_success:
   - npm run semantic-release
 branches:

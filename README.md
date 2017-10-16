@@ -38,6 +38,12 @@ You can even pass a wild card string to find files
 $(npm bin)/ok-file 'videso/*.mp4'
 ```
 
+You can combine filenames with wild cards
+
+```
+$(npm bin)/ok-file package.json 'src/*.js'
+```
+
 ## Debugging
 
 Run program with `DEBUG=ok-file ...` environment variable

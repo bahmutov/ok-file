@@ -1,14 +1,15 @@
 #!/usr/bin/env node
 
 const okFile = require('..')
-const filename = process.argv[2]
+const filenames = process.argv.slice(2)
 
-if (!filename) {
-  console.error('usage: ok-file <filename>')
-  console.error('checks if file exists and is not empty')
+if (!filenames.length) {
+  console.error('usage: ok-file <filename1> <filename2>')
+  console.error("or:    ok-file '<wild card>'")
+  console.error('checks if each file exists and is not empty')
   process.exit(1)
 }
 
-if (!okFile(filename)) {
+if (!filenames.every(okFile)) {
   process.exit(1)
 }
