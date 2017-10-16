@@ -26,6 +26,18 @@ Check if given file `foo.txt` exists and is not empty
 $(npm bin)/ok-file foo.txt
 ```
 
+You can pass several files, each will be checked
+
+```
+$(npm bin)/ok-file foo.txt bar.js
+```
+
+You can even pass a wild card string to find files
+
+```
+$(npm bin)/ok-file 'videso/*.mp4'
+```
+
 ## Debugging
 
 Run program with `DEBUG=ok-file ...` environment variable

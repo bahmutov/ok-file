@@ -7,14 +7,28 @@ function isWildcard (s) {
   return s.indexOf('*') !== -1
 }
 
+function few (list) {
+  return list.length < 3
+}
+
 function okWildcard (pattern) {
   const globby = require('globby')
+  const pluralize = require('pluralize')
+
   const filenames = globby.sync(pattern)
   if (!filenames.length) {
     console.error('Could not find any files matching "%s"', pattern)
     return false
   }
-  return true
+  debug(
+    'using pattern "%s" found %s',
+    pattern,
+    pluralize('file', filenames.length, true)
+  )
+  if (few(filenames)) {
+    debug(filenames)
+  }
+  return filenames.every(okFile)
 }
 
 function okFile (filename) {

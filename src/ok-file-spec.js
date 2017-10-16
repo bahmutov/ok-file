@@ -17,4 +17,18 @@ describe('ok-file', () => {
   it('does not pass non-existent file', () => {
     la(!okFile('does/not/exist'))
   })
+
+  describe('wild card', () => {
+    it('works with single file', () => {
+      la(okFile('*.json'))
+    })
+
+    it('works with several files', () => {
+      la(okFile('src/*.js'))
+    })
+
+    it('fails for non-existent card', () => {
+      la(!okFile('*.foo'))
+    })
+  })
 })
