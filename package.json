@@ -4,7 +4,7 @@
   "version": "0.0.0-development",
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "bugs": "https://github.com/bahmutov/ok-file/issues",
-  "alias": {
+  "bin": {
     "ok-file": "bin/ok-file"
   },
   "config": {
@@ -57,10 +57,10 @@
     "deps": "deps-ok && dependency-check --no-dev .",
     "issues": "git-issues",
     "license": "license-checker --production --onlyunknown --csv",
-    "lint": "standard --verbose --fix src/*.js",
+    "lint": "standard --verbose --fix src/*.js bin/*.js",
     "prelint": "npm run pretty",
     "pretest": "npm run lint",
-    "pretty": "prettier-standard 'src/*.js'",
+    "pretty": "prettier-standard 'src/*.js' 'bin/*.js'",
     "secure": "nsp check",
     "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";",
     "test": "npm run unit",
@@ -72,15 +72,17 @@
   },
   "devDependencies": {
     "ban-sensitive-files": "1.9.0",
+    "check-more-types": "2.24.0",
     "dependency-check": "2.9.1",
     "deps-ok": "1.2.1",
     "git-issues": "1.3.1",
+    "lazy-ass": "1.6.0",
     "license-checker": "14.0.0",
     "mocha": "4.0.0",
     "nsp": "2.8.1",
     "pre-git": "3.15.3",
     "prettier-standard": "7.0.1",
-    "standard": "10.0.3",
-    "semantic-release": "^8.0.3"
+    "semantic-release": "^8.0.3",
+    "standard": "10.0.3"
   }
 }
