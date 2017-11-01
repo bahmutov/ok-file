@@ -4,6 +4,9 @@
 const okFile = require('.')
 const la = require('lazy-ass')
 const is = require('check-more-types')
+const sinon = require('sinon')
+const path = require('path')
+const glob = require('glob')
 
 describe('ok-file', () => {
   it('is a function', () => {
@@ -29,6 +32,31 @@ describe('ok-file', () => {
 
     it('fails for non-existent card', () => {
       la(!okFile('*.foo'))
+    })
+
+    context('windows', () => {
+      const sandbox = sinon.createSandbox()
+      const sep = path.sep
+
+      beforeEach(() => {
+        sandbox
+          .stub(glob, 'sync')
+          .withArgs('src\\*.js')
+          .returns(['src/index.js'])
+        // like on Windows
+        path.sep = '\\'
+      })
+
+      afterEach(() => {
+        sandbox.restore()
+        path.sep = sep
+      })
+
+      it('flips forward slashes in pattern', () => {
+        const ok = okFile('src/*.js')
+        la(glob.sync.calledOnce, 'was called')
+        la(ok, 'found source files')
+      })
     })
   })
 })

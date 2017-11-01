@@ -83,6 +83,7 @@
     "pre-git": "3.15.3",
     "prettier-standard": "7.0.1",
     "semantic-release": "^8.0.3",
+    "sinon": "4.0.2",
     "standard": "10.0.3"
   },
   "dependencies": {

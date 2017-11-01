@@ -54,6 +54,14 @@ okFile('file/name') // or okFile('src/*.js')
 // returns true or false
 ```
 
+## Windows
+
+To keep this tool cross platform, if a wildcard pattern has forward slashes, and the
+platform path separator `require('path').sep` is a backwards slash `\\` then the
+pattern's slashes a flipped before globbing. Thus even on Windows you can use
+
+    $(npm bin)/ok-file package.json 'src/*.js'
+
 ## Debugging
 
 Run program with `DEBUG=ok-file ...` environment variable

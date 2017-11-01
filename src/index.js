@@ -2,6 +2,7 @@
 
 const debug = require('debug')('ok-file')
 const fs = require('fs')
+const path = require('path')
 
 function isWildcard (s) {
   return s.indexOf('*') !== -1
@@ -11,9 +12,21 @@ function few (list) {
   return list.length < 3
 }
 
+function hasForwardSlashes (s) {
+  return s.indexOf('/') !== -1
+}
+
+function doesOSExpectBackSlashes () {
+  return path.sep === '\\'
+}
+
 function okWildcard (pattern) {
   const globby = require('globby')
   const pluralize = require('pluralize')
+
+  if (hasForwardSlashes(pattern) && doesOSExpectBackSlashes()) {
+    pattern = pattern.replace(/\//g, path.sep)
+  }
 
   const filenames = globby.sync(pattern)
   if (!filenames.length) {
