@@ -1,0 +1,14 @@
+name: test
+on: [push]
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+    name: tests
+    steps:
+      - uses: actions/checkout@v1
+      - uses: bahmutov/npm-install@v1
+      - run: npm t
+      # finds package.json
+      - run: node ./bin/ok-file.js package.json
+      # finds multiple JS files
+      - run: node ./bin/ok-file.js 'src/*.js'
