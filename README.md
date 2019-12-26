@@ -8,6 +8,7 @@
 [![Build status][ci-image] ][ci-url]
 [![semantic-release][semantic-image] ][semantic-url]
 [![js-standard-style][standard-image]][standard-url]
+![Windows CI](https://github.com/bahmutov/ok-file/workflows/test/badge.svg?branch=master)
 
 Useful to confirm that tools that generate files were successful.
 
