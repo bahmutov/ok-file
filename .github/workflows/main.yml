@@ -14,3 +14,20 @@ jobs:
       - run: node ./bin/ok-file.js package.json
       # finds multiple JS files
       - run: node ./bin/ok-file.js 'src/*.js'
+
+  linux-test:
+    runs-on: ubuntu-latest
+    name: tests
+    env:
+      DEBUG: ok-file
+    steps:
+      - uses: actions/checkout@v1
+      - uses: bahmutov/npm-install@v1
+      - run: npm t
+      - run: node bin/ok-file.js package.json .travis.yml
+      # if file is not there
+      - run: node bin/ok-file.js does/not/exist || true
+      # finds package.json
+      - run: node ./bin/ok-file.js package.json
+      # finds multiple JS files
+      - run: node ./bin/ok-file.js 'src/*.js'
