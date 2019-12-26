@@ -20,12 +20,31 @@ function doesOSExpectBackSlashes () {
   return path.sep === '\\'
 }
 
+function hasSingleQuotes (s) {
+  return (
+    typeof s === 'string' &&
+    s.length >= 2 &&
+    s[0] === "'" &&
+    s[s.length - 1] === "'"
+  )
+}
+
+function removeSingleQuotes (s) {
+  return s.substr(1, s.length - 2)
+}
+
 function okWildcard (pattern) {
   const globby = require('globby')
   const pluralize = require('pluralize')
 
   if (hasForwardSlashes(pattern) && doesOSExpectBackSlashes()) {
     pattern = pattern.replace(/\//g, path.sep)
+  }
+
+  if (hasSingleQuotes(pattern)) {
+    debug('removing single quotes around pattern "%s"', pattern)
+    pattern = removeSingleQuotes(pattern)
+    debug('removed single quotes, left with "%s"', pattern)
   }
 
   const filenames = globby.sync(pattern)

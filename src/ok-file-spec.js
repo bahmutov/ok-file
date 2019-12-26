@@ -34,6 +34,10 @@ describe('ok-file', () => {
       la(!okFile('*.foo'))
     })
 
+    it('removes single quotes', () => {
+      la(okFile("'src/*.js'"))
+    })
+
     context('windows', () => {
       const sandbox = sinon.createSandbox()
       const sep = path.sep
