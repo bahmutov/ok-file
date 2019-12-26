@@ -60,6 +60,7 @@ function okFile (filename) {
     console.error('File', filename, 'is empty')
     return false
   }
+  debug('file "%s" is ok', filename)
   return true
 }
 
