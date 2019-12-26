@@ -65,9 +65,6 @@
     "unit": "mocha src/*-spec.js",
     "semantic-release": "semantic-release"
   },
-  "release": {
-    "analyzeCommits": "simple-commit-message"
-  },
   "devDependencies": {
     "ban-sensitive-files": "1.9.0",
     "check-more-types": "2.24.0",
