@@ -64,6 +64,10 @@ pattern's slashes a flipped before globbing. Thus even on Windows you can use
 
     $(npm bin)/ok-file package.json 'src/*.js'
 
+## Single quotes
+
+If you pass the wild card pattern with single quotes, they will be automatically removed.
+
 ## Debugging
 
 Run program with `DEBUG=ok-file ...` environment variable
