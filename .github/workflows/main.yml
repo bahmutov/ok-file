@@ -4,6 +4,8 @@ jobs:
   build-and-test:
     runs-on: windows-latest
     name: tests
+    env:
+      DEBUG: ok-file
     steps:
       - uses: actions/checkout@v1
       - uses: bahmutov/npm-install@v1
