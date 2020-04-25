@@ -78,7 +78,7 @@
     "prettier-standard": "16.2.1",
     "sinon": "9.0.2",
     "standard": "14.3.1",
-    "semantic-release": "17.0.4"
+    "semantic-release": "17.0.7"
   },
   "dependencies": {
     "debug": "4.1.1",
