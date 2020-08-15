@@ -76,7 +76,7 @@
     "mocha": "8.0.1",
     "pre-git": "3.17.1",
     "prettier-standard": "16.4.1",
-    "sinon": "9.0.2",
+    "sinon": "9.0.3",
     "standard": "14.3.4",
     "semantic-release": "17.1.1"
   },
