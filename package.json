@@ -66,7 +66,7 @@
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
-    "ban-sensitive-files": "1.9.8",
+    "ban-sensitive-files": "1.9.9",
     "check-more-types": "2.24.0",
     "dependency-check": "4.1.0",
     "deps-ok": "1.4.1",
