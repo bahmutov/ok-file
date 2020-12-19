@@ -7,7 +7,7 @@ jobs:
     env:
       DEBUG: ok-file
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - uses: bahmutov/npm-install@v1
       - run: npm t
       # finds package.json
@@ -21,7 +21,7 @@ jobs:
     env:
       DEBUG: ok-file
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - uses: bahmutov/npm-install@v1
       - run: npm t
       - run: node bin/ok-file.js package.json .travis.yml
